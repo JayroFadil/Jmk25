@@ -1,10 +1,23 @@
 <?php
 
+// Membuat namespace berdasarkan namespace autoload
 namespace Jmk25\App;
 
 class Router {
+  /**
+   * Informasi Route yang akan dijalankan
+   * @var array
+   */
   private static array $routes = [];
 
+  /**
+   * Menampung route berdasarkan path yang didaftarkan
+   * @param string $method
+   * @param string $path
+   * @param string $controller
+   * @param string $function
+   * @return void
+   */
   public static function add(string $method, string $path, string $controller, string $function): void {
     self::$routes[] = [
       "method" => $method,
@@ -14,6 +27,10 @@ class Router {
     ];
   }
 
+  /**
+   * jalankankan Route yang sudah didaftarkan
+   * @return void
+   */
   public static function run() {
     $path = "/";
     $method = $_SERVER['REQUEST_METHOD'];
@@ -34,6 +51,7 @@ class Router {
       }
     }
   
+    // Kembalikan ika halaman tidak ditemukan
     http_response_code(404);
     echo "Halaman tidak ditemukan";
   }

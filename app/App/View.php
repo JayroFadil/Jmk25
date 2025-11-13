@@ -1,5 +1,6 @@
 <?php
 
+// Membuat namespace berdasarkan namespace autoload
 namespace Jmk25\App;
 
 class View {
