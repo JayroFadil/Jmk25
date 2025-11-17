@@ -1,4 +1,14 @@
 {
+  "name": "jmk25",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/evanalifian/Jmk25#readme",
+  "description": "Website untuk memposting meme shitpost di lengkungan kampus.",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./public/css/input.css -o ./public/css/global.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.18"
   }
