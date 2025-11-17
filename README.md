@@ -66,10 +66,7 @@ npm install
     <td align="center" valign="top">
       <a href="https://github.com/evanalifian">
          <div style="width:100px; height:100px; overflow:hidden; border-radius:50%;">
-            <img src="https://github.com/evanalifian.png" 
-               width="100" 
-               height="100"
-               style="object-fit: cover;"/>
+            <img src="https://github.com/evanalifian.png" width="100" height="100" style="object-fit: cover;"/>
             <br><sub><b>Evan</b></sub>
          </div>
       </a>
@@ -77,10 +74,7 @@ npm install
     <td align="center" valign="top">
       <a href="https://github.com/JayroFadil">
          <div style="width:100px; height:100px; overflow:hidden; border-radius:50%;">
-            <img src="https://github.com/JayroFadil.png" 
-               width="100" 
-               height="100"
-               style="object-fit: cover;"/>
+            <img src="https://github.com/JayroFadil.png" width="100" height="100" style="object-fit: cover;"/>
             <br><sub><b>Fadil</b></sub>
          </div>
       </a>
@@ -88,10 +82,7 @@ npm install
     <td align="center" valign="top">
       <a href="https://github.com/Roti18">
          <div style="width:100px; height:100px; overflow:hidden; border-radius:50%;">
-            <img src="https://github.com/Roti18.png" 
-               width="100" 
-               height="100"
-               style="object-fit: cover;"/>
+            <img src="https://github.com/Roti18.png" width="100" height="100" style="object-fit: cover;"/>
             <br><sub><b>Roni</b></sub>
          </div>
       </a>
@@ -99,10 +90,7 @@ npm install
     <td align="center" valign="top">
       <a href="https://github.com/lailatulhasanah0304">
          <div style="width:100px; height:100px; overflow:hidden; border-radius:50%;">
-            <img src="https://github.com/lailatulhasanah0304.png" 
-               width="100" 
-               height="100"
-               style="object-fit: cover;"/>
+            <img src="https://github.com/lailatulhasanah0304.png" width="100" height="100" style="object-fit: cover;"/>
             <br><sub><b>Laila</b></sub>
          </div>
       </a>
@@ -110,10 +98,7 @@ npm install
     <td align="center" valign="top">
       <a href="https://github.com/RobbaniyahUmdatunN1">
          <div style="width:100px; height:100px; overflow:hidden; border-radius:50%;">
-            <img src="https://github.com/RobbaniyahUmdatunN1.png" 
-               width="100" 
-               height="100"
-               style="object-fit: cover;"/>
+            <img src="https://github.com/RobbaniyahUmdatunN1.png" width="100" height="100" style="object-fit: cover;"/>
             <br><sub><b>Nia</b></sub>
          </div>
       </a>
