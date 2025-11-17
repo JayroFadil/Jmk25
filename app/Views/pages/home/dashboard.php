@@ -7,7 +7,7 @@
   ?>
 <div class="">
   <div
-    class="flex flex-col mx-auto w-[43%] mb-6 p-6 border border-[var(--mainGray)] rounded-3xl shadow bg-[var(--secondBg)] mt-20 mb-20">
+    class="flex flex-col mx-auto w-[43%] p-6 border border-[var(--mainGray)] rounded-3xl shadow bg-[var(--secondBg)] mt-20 mb-20">
     <?php if (is_array($memes)): ?>
     <?php foreach ($memes as $meme): ?>
     <div class="flex flex-col border-b border-[var(--mainGray)] pb-6 mb-6">
@@ -24,5 +24,3 @@
     <?php endif; ?>
   </div>
 </div>
-
-<script src="js/icons.js"></script>
