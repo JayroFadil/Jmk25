@@ -19,6 +19,8 @@ use Jmk25\Middlewares\IsNotAuthMiddleware;
 
 // COntrollers
 use Jmk25\Controllers\LandingPageController;
+use Jmk25\Middlewares\AuthMiddleware;
+use Jmk25\Controllers\HomeController;
 use Jmk25\Controllers\UserController;
 
 
@@ -29,7 +31,9 @@ Router::add("GET", "/user/signin", UserController::class, "renderSignin", [IsAut
 
 
 // Landing page route
-Router::add("GET", "/", LandingPageController::class, "index", [IsNotAuthMiddleware::class]);
+Router::add("GET", "/", HomeController::class, "index");
+Router::add("GET", "/landing", HomeController::class, "landing");
+// Router::add("GET", "/", HomeController::class, "landing");
 // Router::add("GET", "/([0-9a-zA-Z]*)/id/([0-9a-zA-Z]*)", HomeController::class, "index");
 
 
