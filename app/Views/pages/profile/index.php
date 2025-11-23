@@ -1,11 +1,10 @@
-<main class="max-w-2xl mx-auto h-screen flex flex-col overflow-hidden">
+<main class="max-w-2xl mx-auto min-h-screen flex flex-col">
 
-  <div class="z-20 shrink-0">
+  <div class="sticky top-0 z-50 shrink-0  backdrop-blur-md">
     <?php require_once __DIR__ . '/../../partials/MainHeader.php'; ?>
   </div>
 
-  <div
-    class="flex-1 mt-2 bg-secondBg rounded-t-[2.5rem] overflow-y-auto relative shadow-[inner_0_10px_20px_rgba(0,0,0,0.05)] no-scrollbar">
+  <div class="flex-1 mt-2 bg-secondBg rounded-t-[2.5rem] relative shadow-[inner_0_10px_20px_rgba(0,0,0,0.05)] pb-10">
 
     <div class="flex flex-col min-h-full">
 

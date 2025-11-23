@@ -1,17 +1,16 @@
-<main class="max-w-2xl mx-auto h-screen flex flex-col overflow-hidden">
+<main class="max-w-2xl mx-auto min-h-screen flex flex-col">
 
-  <div class="z-20 shrink-0">
+  <div class="sticky top-0 z-50 shrink-0 backdrop-blur-md">
     <?php require_once __DIR__ . '/../../partials/MainHeader.php'; ?>
   </div>
 
-  <div
-    class="flex-1 mt-2 bg-secondBg rounded-t-[2.5rem] overflow-y-auto relative shadow-[inner_0_10px_20px_rgba(0,0,0,0.05)] no-scrollbar">
+  <div class="flex-1 mt-2 bg-secondBg rounded-t-[2.5rem] relative shadow-[inner_0_10px_20px_rgba(0,0,0,0.05)] pb-10">
 
     <div class="pt-6 pb-20 flex flex-col">
 
       <?php $memes = $model['data']['memes']; ?>
 
-      <?php if (is_array($memes)): ?>
+      <?php if (is_array($memes) && count($memes) > 0): ?>
       <?php foreach ($memes as $meme): ?>
 
       <div class="flex flex-col p-5 border-b border-mainGray hover:bg-mainGray/5 transition-colors">
@@ -39,32 +38,38 @@
           </button>
         </div>
 
-        <p class="text-mainText text-[15px] mb-3 leading-relaxed whitespace-pre-line">
+        <p onclick="openComment(
+            '<?= $meme['id'] ?? rand(1,100) ?>', 
+            '<?= htmlspecialchars($meme['author']) ?>', 
+            `<?= htmlspecialchars($meme['title']) ?>`
+          )"
+          class="text-mainText text-[15px] mb-3 leading-relaxed whitespace-pre-line cursor-pointer hover:opacity-75 transition-opacity">
           <?= htmlspecialchars($meme['title']) ?>
         </p>
 
         <div class="rounded-2xl overflow-hidden border border-mainGray bg-black/5">
           <img src="<?= htmlspecialchars($meme['url']) ?>" alt="Meme"
+            onclick="openImageModal('<?= htmlspecialchars($meme['url']) ?>')"
             class="w-full h-auto max-h-[600px] object-contain hover:opacity-95 transition-opacity cursor-pointer">
         </div>
 
         <?php require __DIR__ . '/../../partials/Interact.php'; ?>
 
       </div>
-
       <?php endforeach; ?>
       <?php else: ?>
+
       <div class="py-20 text-center text-mainText/50 flex flex-col items-center">
         <ion-icon name="images-outline" class="text-5xl mb-4 opacity-50"></ion-icon>
         <p>Belum ada meme yang tersedia saat ini.</p>
       </div>
+
       <?php endif; ?>
 
     </div>
   </div>
 
+  <?php require_once __DIR__ . '/../../partials/ImageModal.php'; ?>
+  <?php require_once __DIR__ . '/../../partials/Comment.php'; ?>
+
 </main>
-
-<style>
-
-</style>
