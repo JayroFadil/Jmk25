@@ -43,7 +43,6 @@ Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMi
 Router::add("GET", "/create", PostController::class, "renderCreate"); // Menampilkan form
 Router::add("POST", "/store", PostController::class, "store");  // Menyimpan data
 // Halaman Notifikasi
-Router::add("GET", "/notifications", PostController::class, "renderNotifications");
 
 // Eksekusi route yang dituju
 Router::run();
