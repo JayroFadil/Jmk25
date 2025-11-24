@@ -32,11 +32,13 @@ class UserController {
   public function register() {
     $username = trim(htmlspecialchars($_POST["username"]));
     $password = trim(htmlspecialchars($_POST["password"]));
+    $user_display = trim(htmlspecialchars($_POST["user_display"]));
+    $email = trim(htmlspecialchars($_POST["email"]));
 
     try {
       UserModel::findUser($username);
       UserService::validateRegister($username, $password);
-      UserModel::register($username, $password);
+      UserModel::register($username, $user_display, $email, $password);
       View::redirect("/user/signin");
     } catch (ValidationException $err) {
       View::render("user/signup", [
@@ -62,7 +64,7 @@ class UserController {
         $hash_password = $s["user_password"];
         $id_user = $s["id"];
       }
-      if ($password != $hash_password) {
+      if (md5($password) != $hash_password) {
         throw new ValidationException("Password salah");
       } else {
         session_start();
