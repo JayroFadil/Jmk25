@@ -45,11 +45,8 @@
                   <span class="font-bold">8.5K</span> <span class="opacity-60">Followers</span>
                 </div>
               </div>
-
-
             </div>
           </div>
-
           <div class="flex w-full border-b border-mainGray mt-6">
             <div
               class="flex-1 py-3 flex justify-center items-center cursor-pointer border-b-2 border-mainText transition-colors hover:bg-mainGray/5">
@@ -110,12 +107,9 @@
               </div>
             <?php endforeach; ?>
           <?php else: ?>
-
             <div class="py-20 text-center text-mainText/50">Belum ada meme.</div>
           <?php endif; ?>
-          
         </div>
-        
       </div>
     </div>
-  </main>
+</main>

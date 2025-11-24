@@ -40,7 +40,7 @@ class UserController {
       View::redirect("/user/signin");
     } catch (ValidationException $err) {
       View::render("user/signup", [
-        "title" => "Register new account",
+        "title" => "Gagal Register",
         "err_msg" => $err->getMessage()
       ]);
     }
