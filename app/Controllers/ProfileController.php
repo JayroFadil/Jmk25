@@ -1,16 +1,29 @@
 <?php
 namespace Jmk25\Controllers;
 
-
 use Jmk25\App\View;
 use Jmk25\Models\ProfileModel;
 
-class ProfileController{
-  public static function profile(){
-    $data = ProfileModel::getAllProfile();
+class ProfileController {
+  
+  public static function profile() {
+    // 1. Start Session
+    if (session_status() === PHP_SESSION_NONE) session_start();
+
+    // 2. Cek apakah user sudah login?
+    if (!isset($_SESSION['login']['id_user'])) {
+        View::redirect('/user/signin');
+        exit;
+    }
+
+    // 3. Ambil ID User dari Session
+    $userId = $_SESSION['login']['id_user'];
+
+    // 4. KIRIM $userId KE MODEL (INI YANG SEBELUMNYA KURANG)
+    $data = ProfileModel::getAllProfile($userId);
 
     $model = [
-      "title" => "Selamat Datang di JMK25 | Post Your Best Meme awokawok.",
+      "title" => "Profile Saya | JMK25",
       "description" => "Website untuk memposting meme shitpost di lengkungan kampus.",
       "data" => $data,
       "menus" => [
@@ -21,7 +34,7 @@ class ProfileController{
       ],
       "hideSidebar" => false
     ];
+
     View::render("/profile/index", $model);
   }
 }
-?>

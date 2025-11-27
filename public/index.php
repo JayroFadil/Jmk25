@@ -11,6 +11,8 @@ require_once __DIR__ . "/../vendor/autoload.php";
  * Memanggil class Controller yang dibutuhkan untuk setiap halaman
  * Memanggil class Controller untuk middleware
  */
+
+use Dom\Comment;
 use Jmk25\App\Router;
 
 // Middlewares
@@ -22,6 +24,9 @@ use Jmk25\Controllers\HomeController;
 use Jmk25\Controllers\UserController;
 use Jmk25\Controllers\PostController;
 use Jmk25\Controllers\ProfileController;
+use Jmk25\Controllers\BookmarkController;
+use Jmk25\Controllers\CommentController;
+use Jmk25\Controllers\LikesController;
 
 
 // User path routes
@@ -43,6 +48,16 @@ Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMi
 Router::add("GET", "/create", PostController::class, "renderCreate"); // Menampilkan form
 Router::add("POST", "/store", PostController::class, "store");  // Menyimpan data
 // Halaman Notifikasi
+
+// Bookmark route
+Router::add("POST", "/bookmark/toggle", BookmarkController::class, "toggle", [IsNotAuthMiddleware::class]);
+Router::add("GET", "/bookmark", BookmarkController::class, "index", [IsNotAuthMiddleware::class]);
+
+// likes
+Router::add("POST", "/like/toggle", LikesController::class, "toggle", [IsNotAuthMiddleware::class]);
+
+// comments
+// Router::add("GET", "/post/detail", CommentController::class, "detail", [IsNotAuthMiddleware::class]);
 
 // Eksekusi route yang dituju
 Router::run();
