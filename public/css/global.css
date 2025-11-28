@@ -965,6 +965,7 @@ video {
   height: 1px;
 }
 
+<<<<<<< HEAD
 .h-24 {
   height: 6rem;
 }
@@ -973,6 +974,8 @@ video {
   height: 70vh;
 }
 
+=======
+>>>>>>> 73d777951a70dfc936cdf8225a5ff3ea829957bf
 .max-h-\[600px\] {
   max-height: 600px;
 }
