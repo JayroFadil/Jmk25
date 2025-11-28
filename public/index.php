@@ -26,6 +26,7 @@ use Jmk25\Controllers\PostController;
 use Jmk25\Controllers\ProfileController;
 use Jmk25\Controllers\BookmarkController;
 use Jmk25\Controllers\CommentController;
+use Jmk25\Controllers\LandingPageController;
 use Jmk25\Controllers\LikesController;
 
 
@@ -39,7 +40,7 @@ Router::add("GET", "/user/logout", UserController::class, "logout");
 
 // Landing page route
 Router::add("GET", "/", HomeController::class, "index", [IsNotAuthMiddleware::class]);
-Router::add("GET", "/landing", HomeController::class, "landing");
+Router::add("GET", "/landing", LandingPageController::class, "index", [IsNotAuthMiddleware::class]);
 Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMiddleware::class]);
 // Router::add("GET", "/", HomeController::class, "landing");
 // Router::add("GET", "/([0-9a-zA-Z]*)/id/([0-9a-zA-Z]*)", HomeController::class, "index");

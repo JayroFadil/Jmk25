@@ -17,15 +17,16 @@ class ProfileController {
     }
 
     // 3. Ambil ID User dari Session
-    $userId = $_SESSION['login']['id_user'];
+    $userId = $_SESSION['login']['id_user'] ?? 0;
 
     // 4. KIRIM $userId KE MODEL (INI YANG SEBELUMNYA KURANG)
-    $data = ProfileModel::getAllProfile($userId);
-
+    $profileData = ProfileModel::getUserProfileData($userId);
+    $postData = ProfileModel::getUserPosts($userId);
     $model = [
       "title" => "Profile Saya | JMK25",
       "description" => "Website untuk memposting meme shitpost di lengkungan kampus.",
-      "data" => $data,
+      "dataProfile" => $profileData,
+      "dataPost" => $postData,
       "menus" => [
         [
           "text" => "Profile",

@@ -5,17 +5,12 @@ if(isset($_SESSION['login']['id_user'])){
     $userId = 0;
 }
 
-// Simple logic to determine the current path
-// NOTE: This assumes the script runs on every page.
 $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $isHomeActive = ($currentPath === '/' || $currentPath === '/index.php'); // Check if it's the home path
 
-// Function to conditionally render the icon based on active state
 function getIconName($path, $name, $currentPath) {
-    // Determine if the current link path matches the actual path
     $isActive = (strpos($currentPath, $path) === 0 && $path !== '/') || ($path === '/' && ($currentPath === '/' || $currentPath === '/index.php'));
     
-    // If active, return the filled icon name, otherwise return the outline name
     return $isActive ? $name : $name . '-outline';
 }
 
@@ -58,7 +53,7 @@ function getIconName($path, $name, $currentPath) {
     </a>
 
     <a href="bookmark" id="nav-bookmark" class="sidebar-icon group p-3 duration-300 transition-colors outline-none">
-      <ion-icon name="<?= getIconName('/saved', 'bookmark', $currentPath); ?>"
+      <ion-icon name="<?= getIconName('/bookmark', 'bookmark', $currentPath); ?>"
         class="text-3xl text-mainGray group-hover:text-mainText transition-colors">
       </ion-icon>
     </a>
@@ -91,7 +86,6 @@ function getIconName($path, $name, $currentPath) {
 </nav>
 
 <script>
-// ... (Your JavaScript remains the same)
 function toggleMenu() {
   const popup = document.getElementById('menuPopup');
 

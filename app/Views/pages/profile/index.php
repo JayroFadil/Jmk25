@@ -1,3 +1,7 @@
+<?php 
+    $profileUser = $model["dataProfile"]; 
+    $postUser = $model["dataPost"]; 
+?>
 <main class="max-w-2xl mx-auto min-h-screen flex flex-col">
 
   <div class="sticky top-0 z-50 shrink-0 backdrop-blur-md">
@@ -7,14 +11,7 @@
   <div class="flex-1 mt-2 bg-secondBg rounded-t-[2.5rem] relative shadow-[inner_0_10px_20px_rgba(0,0,0,0.05)] pb-10">
 
     <div class="flex flex-col min-h-full">
-
       <div class="pt-8 pb-2 flex flex-col">
-
-
-        <?php 
-            $profileUser = $model["data"][0] ?? null; 
-        ?>
-
         <?php if ($profileUser): ?>
         <div class="flex gap-5 px-6">
 
@@ -42,7 +39,7 @@
               </div>
 
               <button class="p-1 rounded-full hover:bg-mainGray/10 text-mainText transition-colors">
-                <ion-icon name="ellipsis-horizontal" class="text-xl"></ion-icon>
+                <ion-icon name="settings-outline" class="text-xl"></ion-icon>
               </button>
             </div>
 
@@ -52,7 +49,7 @@
 
             <div class="flex gap-5 mt-3 text-xs text-mainText font-medium">
               <div class="cursor-pointer hover:underline flex gap-1">
-                <span class="font-bold"><?= count($model["data"]) ?></span>
+                <span class="font-bold"><?= count($postUser) ?></span>
                 <span class="opacity-60">Post</span>
               </div>
               <div class="cursor-pointer hover:underline flex gap-1">
@@ -74,30 +71,30 @@
             class="flex-1 py-3 flex justify-center items-center cursor-pointer border-b-2 border-mainText transition-colors hover:bg-mainGray/5">
           </div>
 
-      </div>
-
-      <div class="pb-20 flex flex-col">
-
-        <?php if ($model["data"]): ?>
-
-        <?php foreach ($model["data"] as $post): ?>
-
-        <?php require __DIR__ . '/../../partials/ContentCard.php'; ?>
-
-        <?php endforeach; ?>
-
-        <?php else: ?>
-
-        <div class="py-20 text-center text-mainText/50 flex flex-col items-center">
-          <ion-icon name="images-outline" class="text-5xl mb-4 opacity-50"></ion-icon>
-          <p>Belum ada meme.</p>
         </div>
 
-        <?php endif; ?>
+        <div class="pb-20 flex flex-col">
+
+          <?php if ($postUser): ?>
+
+          <?php foreach ($model["data"] as $post): ?>
+
+          <?php require __DIR__ . '/../../partials/ContentCard.php'; ?>
+
+          <?php endforeach; ?>
+
+          <?php else: ?>
+
+          <div class="py-20 text-center text-mainText/50 flex flex-col items-center">
+            <ion-icon name="images-outline" class="text-5xl mb-4 opacity-50"></ion-icon>
+            <p>Belum ada meme.</p>
+          </div>
+
+          <?php endif; ?>
+
+        </div>
 
       </div>
-
-    </div>
-  </div>  <?php require_once __DIR__ . '/../../partials/ImageModal.php'; ?>
+    </div> <?php require_once __DIR__ . '/../../partials/ImageModal.php'; ?>
 
 </main>

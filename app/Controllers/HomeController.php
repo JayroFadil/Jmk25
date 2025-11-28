@@ -31,17 +31,6 @@ public function index() {
     
     View::render("/home/dashboard", $model);
   }
-  
-  public static function landing(){
-    $model = [
-      "title" => "Selamat Datang di JMK25 | Post Your Best Meme awokawok.",
-      "description" => "Website untuk memposting meme shitpost di lengkungan kampus.",
-      "hideSidebar" => false
-    ];
-    View::renderLanding("/home/landing", $model);
-  }
-  
-
 }
 
 ?>
