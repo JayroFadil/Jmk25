@@ -15,6 +15,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use Dom\Comment;
 use Jmk25\App\Router;
 
+
 // Middlewares
 use Jmk25\Middlewares\IsAuthMiddleware;
 use Jmk25\Middlewares\IsNotAuthMiddleware;
@@ -28,6 +29,7 @@ use Jmk25\Controllers\BookmarkController;
 use Jmk25\Controllers\CommentController;
 use Jmk25\Controllers\LandingPageController;
 use Jmk25\Controllers\LikesController;
+use Jmk25\Controllers\GroupController;
 
 
 // User path routes
@@ -48,7 +50,18 @@ Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMi
 // Post routes
 Router::add("GET", "/create", PostController::class, "renderCreate"); // Menampilkan form
 Router::add("POST", "/store", PostController::class, "store");  // Menyimpan data
-// Halaman Notifikasi
+Router::add("GET", "/group/group_display", GroupController::class, "renderDetail");// Menampilkan halaman detail grup
+
+// fitur join
+Router::add("POST", "/group/join", GroupController::class, "join");
+
+// Tambahkan baris ini
+Router::add("GET", "/explore", GroupController::class, "renderExplore");
+
+// follow
+Router::add("POST", "/user/follow", UserController::class, "follow");
+// keluar grub
+Router::add("POST", "/group/leave", GroupController::class, "leave");
 
 // Bookmark route
 Router::add("POST", "/bookmark/toggle", BookmarkController::class, "toggle", [IsNotAuthMiddleware::class]);

@@ -23,7 +23,7 @@ public function index() {
           "url" => "/following",
           "active" => false],
         [ "text" => "Grup", 
-          "url" => "/Grup",
+          "url" => "/group/group_display",
           "active" => false],
       ],
       "hideSidebar" => false
