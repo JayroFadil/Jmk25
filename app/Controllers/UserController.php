@@ -43,7 +43,7 @@ class UserController {
     } catch (ValidationException $err) {
       View::render("user/signup", [
         "title" => "Gagal Register",
-        "err_msg" => $err->getMessage(),
+        "err_msg" => $err->getMessage()
       ]);
     }
   }
@@ -79,7 +79,7 @@ class UserController {
     } catch (ValidationException $err) {
       View::render("user/signin", [
         "title" => "Sign in",
-        "err_msg" => $err->getMessage(),
+        "err_msg" => $err->getMessage()
       ]);
     }
   }

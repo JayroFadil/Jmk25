@@ -14,7 +14,6 @@ class Database {
         $conn["database"][$env]["username"],
         $conn["database"][$env]["password"]
       );
-      self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
     return self::$pdo;
   }
