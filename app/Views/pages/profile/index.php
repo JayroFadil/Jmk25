@@ -15,7 +15,9 @@
           <div class="w-20 h-20 rounded-full bg-gray-800 border-2 border-mainGray shrink-0 overflow-hidden">
             <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Felix" class="w-full h-full object-cover">
           </div>
-
+          <div>
+            <a href="/user/edit">gas edit</a>
+          </div>
           <div class="flex-1 flex flex-col">
 
             <div class="flex justify-between items-start">

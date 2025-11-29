@@ -56,8 +56,11 @@ Router::add("POST", "/user/follow", UserController::class, "follow");
 // keluar grub
 Router::add("POST", "/group/leave", GroupController::class, "leave");
 // kick member
-// Tambahkan baris ini
 Router::add("POST", "/group/kick", GroupController::class, "kickMember");
+
+//edit user
+Router::add("GET", "/user/edit", UserController::class, "renderEdit");
+Router::add("POST", "/user/update", UserController::class, "update");
 
 // Eksekusi route yang dituju
 Router::run();
