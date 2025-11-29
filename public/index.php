@@ -63,6 +63,10 @@ Router::add("POST", "/user/follow", UserController::class, "follow");
 // keluar grub
 Router::add("POST", "/group/leave", GroupController::class, "leave");
 
+// kick member
+// Tambahkan baris ini
+Router::add("POST", "/group/kick", GroupController::class, "kickMember");
+
 // Bookmark route
 Router::add("POST", "/bookmark/toggle", BookmarkController::class, "toggle", [IsNotAuthMiddleware::class]);
 Router::add("GET", "/bookmark", BookmarkController::class, "index", [IsNotAuthMiddleware::class]);
