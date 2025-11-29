@@ -53,10 +53,5 @@
     </div>
     <?php endif; ?>
 
-    <div
-      class="absolute right-4 w-5 h-5 flex items-center justify-center text-mainGray/60 border border-mainGray rounded-full hover:bg-mainGray/20 hover:text-mainText transition-colors cursor-pointer">
-      <ion-icon name="ellipsis-horizontal" class="text-sm"></ion-icon>
-    </div>
-
   </div>
 </header>
