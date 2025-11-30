@@ -50,7 +50,7 @@
                     <label class="block text-sm font-bold text-mainText mb-2 ml-1">Bio</label>
                     <textarea name="user_bio" rows="3"
                         class="w-full bg-mainBg border border-mainGray/30 rounded-xl px-4 py-3 text-mainText focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none placeholder-mainGray/50"
-                        placeholder="Ceritakan sedikit tentang diri Anda..."><?= htmlspecialchars($user['user_bio'] ?? '') ?></textarea>
+                        placeholder="Ceritakan sedikit tentang diri Anda..." maxlength="100"><?= htmlspecialchars($user['user_bio'] ?? '') ?></textarea>
                 </div>
 
                 <div class="border-t border-mainGray/20 my-6"></div>
