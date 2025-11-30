@@ -5,6 +5,7 @@ include __DIR__ . '/../../template/sidebar.php';
 
 $groups = $model['groups'] ?? [];
 $users = $model['users'] ?? [];
+
 ?>
 
 <div class="min-h-screen pt-20 pb-24 md:pl-20 md:pt-4 transition-colors duration-300"
@@ -93,43 +94,61 @@ $users = $model['users'] ?? [];
 
             <div class="space-y-3">
                 <?php foreach ($users as $usr): ?>
-                    <div class="flex items-center justify-between p-2 pr-4 rounded-full transition-all hover:brightness-110"
-                        style="background-color: var(--secondBg);">
+                    <?php if(!(isset($_SESSION['login']['id_user']) && $_SESSION['login']['id_user'] == $usr['id'])):?>
+                        <div class="flex items-center justify-between p-2 pr-4 rounded-full transition-all hover:brightness-110"
+                            style="background-color: var(--secondBg);">
 
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2"
-                                style="border-color: var(--mainBg);">
-                                <img src="<?= $usr['pict'] ?>" class="w-full h-full object-cover">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full overflow-hidden border-2"
+                                    style="border-color: var(--mainBg);">
+                                    <img src="<?= $usr['pict'] ?>" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-lg leading-none" style="color: var(--mainText);">
+                                        <?= $usr['name'] ?>
+                                    </span>
+                                    <span class="text-xs mt-1" style="color: var(--mainText); opacity: 0.7;">
+                                        <?= $usr['username'] ?>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex flex-col">
-                                <span class="font-bold text-lg leading-none" style="color: var(--mainText);">
-                                    <?= $usr['name'] ?>
-                                </span>
-                                <span class="text-xs mt-1" style="color: var(--mainText); opacity: 0.7;">
-                                    <?= $usr['username'] ?>
-                                </span>
-                            </div>
+
+                            <?php
+                            // Siapkan variabel style menggunakan IF-ELSE
+                            if ($usr['is_followed']) {
+                                // KONDISI: SUDAH FOLLOW (Aktif/Biru)
+                                $btnClass = 'bg-blue-500 text-white border-blue-500';
+                                $btnStyle = 'background-color: var(--accent); border-color: var(--accent); color: white;';
+                                $showFollow = 'hidden';   // Tulisan 'Follow' sembunyi
+                                $showFollowed = 'block';  // Tulisan 'Followed' muncul
+                            } else {
+                                // KONDISI: BELUM FOLLOW (Transparan/Biasa)
+                                $btnClass = 'bg-transparent text-mainText border-mainGray hover:border-blue-500 hover:text-blue-500';
+                                $btnStyle = '';
+                                $showFollow = 'block';    // Tulisan 'Follow' muncul
+                                $showFollowed = 'hidden'; // Tulisan 'Followed' sembunyi
+                            }
+                            ?>
+
+                            <?php if (!(isset($_SESSION['login']['id_user']) && $_SESSION['login']['id_user'] == $usr['id'])): ?>
+                                <button onclick="toggleFollowExplore(this, '<?= $usr['id'] ?>')"
+                                    class="px-6 py-2 rounded-full font-bold text-sm border transition-all active:scale-95 group relative <?= $btnClass ?>"
+                                    style="<?= $btnStyle ?>">
+
+                                    <span class="text-follow <?= $showFollow ?>">
+                                        Follow
+                                    </span>
+
+                                    <span class="text-followed <?= $showFollowed ?>">
+                                        Followed
+                                    </span>
+
+                                </button>
+                            <?php endif; ?>
+
                         </div>
+                    <?php endif; ?>
 
-                        <?php if ($usr['is_followed']): ?>
-
-                            <button disabled
-                                class="px-6 py-2 rounded-full font-bold text-sm border transition-transform cursor-default opacity-100 text-white"
-                                style="background-color: var(--accent); border-color: var(--accent);">
-                                Followed
-                            </button>
-
-                        <?php else: ?>
-
-                            <button onclick="handleFollow(this, '<?= $usr['id'] ?>')"
-                                class="px-6 py-2 rounded-full font-bold text-sm border transition-transform active:scale-95 hover:brightness-110"
-                                style="border-color: var(--accent); color: var(--accent);">
-                                Follow
-                            </button>
-
-                        <?php endif; ?>
-
-                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
