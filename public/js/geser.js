@@ -152,7 +152,7 @@ function previewImage(input) {
 }
 
 function updateCount(textarea) {
-    const maxLength = 100;
+    const maxLength = 50;
     const currentLength = textarea.value.length;
     const counterElement = document.getElementById('bio-counter');
     
