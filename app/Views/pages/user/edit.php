@@ -20,7 +20,7 @@
 
         <div class="bg-secondBg p-8 rounded-3xl shadow-lg border border-mainGray/10">
             
-            <form action="/user/update" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <form action="/update" method="POST" enctype="multipart/form-data" class="space-y-6">
                 
                 <div class="flex flex-col items-center justify-center mb-6">
                     <div class="relative group cursor-pointer">
