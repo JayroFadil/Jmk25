@@ -74,7 +74,7 @@ class UserController {
           "login" => true,
           "id_user" => $id_user,
         ];
-        View::redirect("/");
+        View::redirect("/dashboard");
       }
     } catch (ValidationException $err) {
       View::render("user/signin", [
