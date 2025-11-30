@@ -1,16 +1,19 @@
-<?php
+<?php 
+// File: CreateGroupModel.php
 
 namespace Jmk25\Models;
 
+use Jmk25\App\View;
 use Jmk25\Config\Database;
-use PDO;
 
 class CreateGroupModel
 {
-    public static function conn()
+     public static function conn()
     {
         return Database::getConnectionDB();
+
     }
+    
     public static function CreateGroup($owner, $name, $desc, $pict)
     {
         $db = self::conn();
@@ -25,6 +28,9 @@ class CreateGroupModel
             'desc' => $desc,
             'pict' => $pict
         ]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        View::redirect("/group/" . $db->lastInsertId());
+        return $db->lastInsertId(); 
     }
 }
+?>
