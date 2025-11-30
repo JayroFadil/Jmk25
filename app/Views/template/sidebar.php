@@ -6,7 +6,7 @@ if(isset($_SESSION['login']['id_user'])){
 }
 
 $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$isHomeActive = ($currentPath === '/' || $currentPath === '/index.php'); // Check if it's the home path
+$isHomeActive = ($currentPath === '/' || $currentPath === '/index.php');
 
 function getIconName($path, $name, $currentPath) {
     $isActive = (strpos($currentPath, $path) === 0 && $path !== '/') || ($path === '/' && ($currentPath === '/' || $currentPath === '/index.php'));
@@ -48,7 +48,7 @@ function getIconName($path, $name, $currentPath) {
       </ion-icon>
     </a>
 
-    <a href="/create" id="nav-add" class="sidebar-icon group p-3 duration-300 transition-colors outline-none">
+    <a href="/upload" id="nav-add" class="sidebar-icon group p-3 duration-300 transition-colors outline-none">
       <ion-icon name="<?= getIconName('/create', 'add-circle', $currentPath); ?>"
         class="text-[2.1rem] text-mainGray group-hover:text-mainText transition-colors"></ion-icon>
     </a>
