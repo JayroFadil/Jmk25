@@ -5,7 +5,9 @@ namespace Jmk25\Controllers;
 use Jmk25\App\View;
 use Jmk25\Models\EditProfileModel;
 
-class EditUserController {
+
+class EditUserController
+{
     public function renderEdit()
     {
         if (session_status() == PHP_SESSION_NONE) session_start();
@@ -65,4 +67,4 @@ class EditUserController {
             exit;
         }
     }
-};
+}

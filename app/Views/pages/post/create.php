@@ -37,7 +37,7 @@
     <div>
       <label for="caption" class="block text-sm font-medium text-mainGray mb-2">Caption</label>
       <textarea id="caption" name="upload_caption" rows="4"
-        class="block w-full p-4 bg-transparent text-mainText border border-mainGray rounded-2xl focus:ring-1 focus:ring-mainText focus:border-mainText placeholder-mainGray/50 resize-none text-lg"
+        class="block w-full p-4 bg-transparent text-mainText border border-mainGray rounded-2xl focus:ring-1 focus:ring-mainText focus:border-mainText placeholder-mainGray resize-none text-lg"
         placeholder="Apa yang sedang terjadi?"></textarea>
     </div>
 
