@@ -1,9 +1,11 @@
 <?php
 // 1. Cek apakah postingan sendiri
-$isMe = (isset($_SESSION['login']['id_user']) && $_SESSION['login']['id_user'] == $post['author_id']);
+$isMe = (isset($_SESSION['login']['id_user']) && $_SESSION['login']['id_user'] == $post['upload_user_id']);
+$authorId = $post['upload_user_id'] ?? null;
+$isFollowed = $post['upload_user_id'] ?? false;
 
 // 2. Siapkan Style dengan IF-ELSE
-if ($post['is_followed']) {
+if ($post['upload_user_id']) {
     // KONDISI: SUDAH FOLLOW (Aktif/Biru)
     $btnClass = 'bg-blue-500 text-white border-blue-500';
     $btnStyle = 'background-color: var(--accent); border-color: var(--accent); color: white;';
@@ -19,7 +21,7 @@ if ($post['is_followed']) {
 ?>
 
 <?php if (!$isMe): ?>
-    <button onclick="toggleFollowExplore(this, '<?= $post['author_id'] ?>')" 
+    <button onclick="toggleFollowExplore(this, '<?= $post['upload_user_id'] ?>')" 
             class="px-4 py-1.5 rounded-full font-bold text-xs border transition-all active:scale-95 group relative <?= $btnClass ?>"
             style="<?= $btnStyle ?>">
         
