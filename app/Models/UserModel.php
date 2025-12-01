@@ -80,7 +80,6 @@ class UserModel {
     
     return $stmt->rowCount() > 0;
   }
-<<<<<<< HEAD
 
   public static function getExploreUser($chars) {
         $sql = "SELECT * FROM user 
@@ -95,7 +94,5 @@ class UserModel {
 
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
-=======
-  
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
+
 }

@@ -2,11 +2,8 @@
 
 $groups = $model['groups'] ?? [];
 $users = $model['users'] ?? [];
-<<<<<<< HEAD
 $explore = $model['explore'] ?? [];
-=======
 
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
 ?>
 
 <main class="max-w-2xl mx-auto min-h-screen flex flex-col">
@@ -15,7 +12,6 @@ $explore = $model['explore'] ?? [];
     <?php require_once __DIR__ . '/../../partials/MainHeader.php'; ?>
   </div>
 
-<<<<<<< HEAD
         <div class="mb-6 relative">
             <form action="/explore" method="post">
                 <input type="text" name="explore" placeholder="Cari grup atau teman..." class="w-full rounded-full py-3 px-12 focus:outline-none transition-all border border-transparent focus:border-[var(--accent)] placeholder-opacity-60" style="background-color: var(--secondBg); color: var(--mainText);">
@@ -27,60 +23,6 @@ $explore = $model['explore'] ?? [];
         
         <?php if (!$explore): ?>
         <div class="flex p-1 rounded-full mb-8 relative" style="background-color: var(--secondBg);">
-=======
-  <div class="mb-6 relative">
-    <input type="text" placeholder="Cari grup atau teman..."
-      class="w-full rounded-full py-3 px-12 focus:outline-none transition-all border border-transparent focus:border-[var(--accent)] placeholder-opacity-60"
-      style="background-color: var(--secondBg); color: var(--mainText);">
-
-    <ion-icon name="search-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-xl"
-      style="color: var(--mainText); opacity: 0.5;"></ion-icon>
-  </div>
-
-  <div class="flex p-1 rounded-full mb-8 relative" style="background-color: var(--secondBg);">
-
-    <div id="tab-slider"
-      class="absolute left-1 top-1 bottom-1 w-[49%] rounded-full transition-all duration-300 z-0 shadow-sm"
-      style="background-color: var(--mainText);"></div>
-
-    <button onclick="switchTab('groups')" id="btn-groups"
-      class="flex-1 py-2 text-center text-sm font-bold relative z-10 transition-all duration-300"
-      style="color: var(--mainBg);"> Grup Komunitas
-    </button>
-
-    <button onclick="switchTab('users')" id="btn-users"
-      class="flex-1 py-2 text-center text-sm font-bold relative z-10 transition-all duration-300"
-      style="color: var(--mainText); opacity: 0.9;"> Teman Baru
-    </button>
-  </div>
-
-  <div id="section-groups" class="animate-fade-in">
-    <h2 class="font-bold text-xl mb-4 pl-2 flex items-center gap-2">
-      <ion-icon name="people-circle-outline" class="text-2xl" style="color: var(--accent);"></ion-icon>
-      Grup Rekomendasi
-    </h2>
-
-    <div class="space-y-3">
-      <?php foreach ($groups as $grp): ?>
-      <div class="flex items-center justify-between p-2 pr-4 rounded-full transition-all hover:brightness-110"
-        style="background-color: var(--secondBg);">
-
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full overflow-hidden border-2" style="border-color: var(--mainBg);">
-            <img src="<?= $grp['icon'] ?>" class="w-full h-full object-cover">
-          </div>
-          <div class="flex flex-col">
-            <span class="font-bold text-lg leading-none tracking-wide" style="color: var(--mainText);">
-              <?= $grp['name'] ?>
-            </span>
-            <span class="text-xs mt-1" style="color: var(--mainText); opacity: 0.7;">
-              <?= $grp['desc'] ?>
-            </span>
-          </div>
-        </div>
-
-        <?php if ($grp['is_joined']): ?>
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
 
         <button disabled
           class="bg-gray-600 text-white px-6 py-2 rounded-full font-bold text-sm cursor-default opacity-80 border border-gray-500">
@@ -94,7 +36,7 @@ $explore = $model['explore'] ?? [];
           Join
         </button>
 
-<<<<<<< HEAD
+
         <div id="section-groups" class="animate-fade-in">
             <h2 class="font-bold text-xl mb-4 pl-2 flex items-center gap-2">
                 <ion-icon name="people-circle-outline" class="text-2xl" style="color: var(--accent);"></ion-icon>
@@ -207,12 +149,6 @@ $explore = $model['explore'] ?? [];
         <?php endforeach ?>
         </ul>
         <?php endif ?>
-=======
-        <?php endif; ?>
-
-      </div>
-      <?php endforeach; ?>
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
     </div>
   </div>
 

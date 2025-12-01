@@ -43,7 +43,8 @@ Router::add("GET", "/user/logout", UserController::class, "logout");
 
 // Landing page route
 Router::add("GET", "/", HomeController::class, "index", [IsNotAuthMiddleware::class]);
-Router::add("GET", "/landing", LandingPageController::class, "index", [IsNotAuthMiddleware::class]);
+Router::add("GET", "/landing", LandingPageController::class, "index", [IsAuthMiddleware::class]);
+Router::add("GET", "/dashboard", HomeController::class, "index", [IsNotAuthMiddleware::class]);
 Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMiddleware::class]);
 // Router::add("GET", "/", HomeController::class, "landing");
 // Router::add("GET", "/([0-9a-zA-Z]*)/id/([0-9a-zA-Z]*)", HomeController::class, "index");
@@ -51,7 +52,9 @@ Router::add("GET", "/profile", ProfileController::class, "profile", [IsNotAuthMi
 // Post routes
 Router::add("GET", "/create", PostController::class, "renderCreate"); // Menampilkan form
 Router::add("POST", "/store", PostController::class, "store");  // Menyimpan data
-Router::add("GET", "/group/group_display", GroupController::class, "renderDetail");// Menampilkan halaman detail grup
+Router::add("GET", "/group", GroupController::class, "renderDetail");// Menampilkan halaman detail grup
+// Router::add("GET", "/upload", PostContentController::class, "index", [IsNotAuthMiddleware::class]);
+// Router::add("POST", "/store", PostContentController::class, "store", [IsNotAuthMiddleware::class]);
 
 // fitur join
 Router::add("GET", "/explore", GroupController::class, "renderExplore");

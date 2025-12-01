@@ -90,11 +90,8 @@ class UserController {
     }
     session_destroy();
     session_unset();
-<<<<<<< HEAD
     View::redirect("/landing");
-=======
-    View::redirect("/");
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
+
   }
   public function follow() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

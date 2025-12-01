@@ -86,7 +86,6 @@ class GroupModel
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-<<<<<<< HEAD
     public static function getExploreGroup($chars) {
         $sql = "SELECT * FROM group WHERE group_name LIKE :c";
 
@@ -103,8 +102,6 @@ class GroupModel
      * FUNGSI KELUAR GRUP
      * Menghapus data member berdasarkan group_id dan user_id
      */
-=======
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
     public static function leaveGroup($groupId, $userId)
     {
         $sql = "DELETE FROM group_member WHERE member_group_id = ? AND member_user_id = ?";
