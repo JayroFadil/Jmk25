@@ -36,14 +36,9 @@ function getIconName($path, $name, $currentPath)
       </ion-icon>
     </a>
 
-<<<<<<< HEAD
     <a href="/group" id="nav-grup" class="sidebar-icon group p-3 duration-300 transition-colors outline-none">
       <ion-icon name="<?= getIconName('/grup', 'people', $currentPath); ?>"
-=======
 
-    <a href="/group" id="nav-grup" class="sidebar-icon group p-3 duration-300 transition-colors outline-none">
-      <ion-icon name="<?= getIconName('/group', 'people', $currentPath); ?>"
->>>>>>> c6bb4c46f288a835b562c28abdb3be272040df0b
         class="text-3xl text-mainGray group-hover:text-mainText transition-colors">
       </ion-icon>
     </a>

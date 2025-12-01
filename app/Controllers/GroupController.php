@@ -152,10 +152,8 @@ class GroupController
         $model = [
             'title' => 'Temukan',
             'menus' => [['text' => 'Temukan', 'url' => '#', 'active' => true]],
-            "explore" => [
-                'users_explore' => $users
-                // 'groups_explore' => $groups,
-                ]
+            'users_explore' => $users,
+            'hideSidebar'=> false
             ];
 
         View::render("/group/explore", $model);
